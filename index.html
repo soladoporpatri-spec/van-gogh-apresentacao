@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vincent Willem van Gogh — Trabalho Escolar</title>
+<meta name="description" content="Trajetória biográfica, contexto histórico, linha cronológica e análise pictórica de Vincent van Gogh. Aluno: Patrício, Turma 3B.">
+<meta name="theme-color" content="#0f1823">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Vincent Willem van Gogh — Trabalho Escolar">
+<meta property="og:description" content="Trajetória biográfica, contexto histórico, linha cronológica e análise pictórica de Vincent van Gogh.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4f8fc; --card:#ffffff; --ink:#1c2b3a; --muted:#5d6b7a;
+  --blue:#a0c4e0; --blue-d:#5f8fb8; --yellow:#fde9a2; --gold:#e0a82e;
+  --line:#d3e0ec; --shadow:none;
+  --serif:Georgia,"Times New Roman",serif; --sans:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0f1823;--card:#18242f;--ink:#e8eef5;--muted:#9fb0c2;--blue:#2c4a66;--blue-d:#7fb0dc;--yellow:#4a4020;--gold:#e8b94a;--line:#2a3a4a;--shadow:none}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 var(--sans)}
+h1,h2,h3{font-family:var(--serif);line-height:1.2;margin:0 0 .5em}
+a{color:var(--blue-d)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* hero */
+.hero{padding:56px 0 40px}
+.hero .grid{display:grid;grid-template-columns:1.3fr 1fr;gap:36px;align-items:center}
+.tag{display:inline-block;background:var(--blue);color:var(--ink);font-weight:700;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;padding:5px 12px;border-radius:3px}
+.eyebrow{color:var(--gold);font-weight:700;letter-spacing:.05em;text-transform:uppercase;font-size:.85rem;margin:18px 0 6px}
+.hero h1{font-size:clamp(2.4rem,6vw,4.2rem);margin-bottom:.2em}
+.hero p.sub{color:var(--muted);font-size:1.15rem}
+.badge{margin-top:22px;display:inline-block;background:var(--yellow);border:1px solid var(--gold);border-radius:3px;padding:12px 20px;font-family:var(--serif);font-size:1.1rem}
+figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:3px;padding:8px}
+figure img{display:block;width:100%;height:auto;border-radius:1px}
+figcaption{font:italic .85rem var(--serif);color:var(--muted);text-align:center;padding:10px 6px 2px}
+
+/* sections */
+section{padding:48px 0}
+.sec-head{margin-bottom:26px}
+.sec-head h2{font-size:clamp(1.6rem,3.4vw,2.3rem)}
+.cols{display:grid;gap:20px}
+.c3{grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+.bio{display:grid;grid-template-columns:1fr 330px;gap:24px;align-items:start}
+.stack{display:grid;gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:3px;overflow:hidden}
+.card h3{font-size:1.08rem;margin:0;padding:14px 18px;background:var(--blue)}
+.card.y h3{background:var(--yellow)}
+.card ul{list-style:none;margin:0;padding:16px 18px 18px}
+.card li{padding:0 0 10px 18px;position:relative;font-size:.97rem}
+.card li:last-child{padding-bottom:0}
+.card li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--gold)}
+.card li b{font-weight:700}
+aside figure{position:sticky;top:84px}
+
+/* timeline */
+.tl{display:grid;gap:0;position:relative;margin-top:8px}
+.tl::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:3px;background:var(--line);transform:translateX(-50%)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-bottom:26px;position:relative}
+.row::after{content:attr(data-y);position:absolute;left:50%;top:14px;transform:translateX(-50%);background:var(--gold);color:#1c1c1c;font-weight:700;font-size:.75rem;padding:4px 10px;border-radius:999px;white-space:nowrap}
+.row .card h3{font-size:1rem}
+.row .card .t{padding:14px 18px 0;font:700 1.02rem var(--serif)}
+.row .card ul{padding-top:8px}
+.leg{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:18px;font-weight:600;font-size:.9rem}
+.leg i{display:inline-block;width:14px;height:14px;border-radius:4px;margin-right:6px;vertical-align:-2px}
+
+/* works */
+.work{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start;margin-bottom:26px}
+.work figure img{border-radius:1px}
+.facts{display:grid;gap:20px}
+.work-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+
+/* footer */
+.thanks{text-align:center;background:var(--card);border:1px solid var(--line);border-radius:3px;padding:44px 20px;margin-bottom:24px}
+.thanks h2{font-size:clamp(2.2rem,6vw,3.6rem);margin-bottom:.1em}
+.thanks hr{width:200px;border:0;border-top:4px solid var(--gold);margin:22px auto 0}
+.refs{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.ref{display:flex;gap:16px;padding:16px;align-items:center}
+.ref img{width:120px;height:auto;border-radius:8px;flex:none}
+.ref a{word-break:break-all;font-size:.9rem}
+footer{padding:30px 0 50px;text-align:center;color:var(--muted);font-size:.9rem}
+
+@media (max-width:860px){
+  .hero .grid,.bio,.work{grid-template-columns:1fr}
+  aside figure{position:static}
+  aside{max-width:360px;margin:0 auto}
+  .tl::before{left:12px}
+  .row{grid-template-columns:1fr;gap:12px;padding-left:34px}
+  .row::after{left:12px;transform:none;top:-2px;font-size:.7rem}
+  .row{padding-top:18px}
+}
+</style>
+<link rel="stylesheet" href="exposicao.css">
+<link rel="stylesheet" href="apresentacao.css">
+<script>document.documentElement.classList.add("pz-on")</script>
+</head>
+<body>
+<div class="pz-loader" id="pz-loader" aria-hidden="true">
+  <span class="pz-curtain top"></span><span class="pz-curtain bottom"></span>
+  <div class="pz-loader-in">
+    <p class="pz-l-kicker">Língua Portuguesa, Literatura e Artes</p>
+    <div class="pz-l-title">Vincent van Gogh</div>
+    <div class="pz-l-bar"><i></i></div>
+    <p class="pz-l-pct">0%</p>
+  </div>
+</div>
+
+<section class="slide hero" id="inicio" data-slide><div class="slide-in"><div class="wrap grid">
+  <div>
+    <span class="tag">Trabalho Escolar | Língua Portuguesa e Literatura</span>
+    <p class="eyebrow">Língua Portuguesa, Literatura e Artes — 3º ano do Ensino Médio</p>
+    <h1>Vincent Willem van Gogh</h1>
+    <p class="sub">Trajetória Biográfica, Contexto Histórico, Linha Cronológica e Análise Pictórica</p>
+    <div class="badge"><b>Aluno:</b> Patrício &nbsp;|&nbsp; <b>Turma:</b> 3B</div>
+  </div>
+  <figure>
+    <img src="img/autorretrato-1889.jpg" alt="Autorretrato de Vincent van Gogh, 1889">
+    <figcaption>Vincent van Gogh, Autorretrato (1889, Musée d'Orsay, Paris). Óleo sobre tela.</figcaption>
+  </figure>
+</div></div></section>
+
+<main id="pz-main">
+
+<!-- BIOGRAFIA -->
+<section class="slide" id="biografia" data-slide><div class="slide-in"><div class="wrap">
+  <div class="sec-head">
+    <span class="tag">Biografia | Parte I: 1853–1885</span>
+    <h2 style="margin-top:12px">Origens, Busca Religiosa e os Primeiros Anos em Nuenen</h2>
+  </div>
+  <div class="bio">
+    <div class="stack">
+      <div class="card"><h3>1. Infância e Primeiros Ofícios (1853–1876)</h3><ul>
+        <li><b>Nascimento e Raízes:</b> Nascido em Groot-Zundert, Holanda, filho do pastor calvinista Theodorus van Gogh, em ambiente severo e religioso.</li>
+        <li><b>Comércio de Arte:</b> Aos 16 anos ingressou na galeria Goupil &amp; Cie (Haia, Londres e Paris), desenvolvendo vasto conhecimento de pintura.</li>
+        <li><b>Desilusão Comercial:</b> O contato com o mercado de arte burguês provocou profunda crise existencial, levando à demissão e à busca teológica.</li>
+      </ul></div>
+      <div class="card y"><h3>2. A Missão em Borinage e o Rompimento (1876–1880)</h3><ul>
+        <li><b>Evangelização Popular:</b> Atuou como pregador laico voluntário entre os miseráveis mineradores de carvão em Borinage, Bélgica.</li>
+        <li><b>Solidariedade Radical:</b> Abdicou de roupas e acomodações dignas para viver na indigência com os mineiros, sendo afastado por 'excesso de zelo'.</li>
+        <li><b>Consciência Humanista:</b> Essa dolorosa imersão consolidou seu compromisso com a dignidade dos oprimidos, germe de sua futura temática artística.</li>
+      </ul></div>
+      <div class="card"><h3>3. Decisão pela Pintura e o Período de Nuenen (1880–1885)</h3><ul>
+        <li><b>Início aos 27 Anos:</b> Em 1880, com apoio financeiro e incentivo do irmão Theo, decidiu dedicar sua vida exclusivamente à arte.</li>
+        <li><b>Estudos em Haia:</b> Recebeu orientação breve do pintor Anton Mauve, dominando o desenho anatômico e o estudo da perspectiva clássica.</li>
+        <li><b>Retorno ao Seio Familiar:</b> Fixou-se com os pais em Nuenen (1883–1885), produzindo centenas de desenhos de tecelões e trabalhadores do campo.</li>
+        <li><b>Paleta Terrosa e Escura:</b> Fase marcada por tons de turfa, cinza e marrom sombrio, refletindo a austeridade e o peso da labuta diária camponesa.</li>
+        <li><b>A Grande Composição:</b> Concluiu em maio de 1885 'Os Comedores de Batata', sua primeira tela monumental que sintetizou sua fase holandesa.</li>
+      </ul></div>
+    </div>
+    <aside><figure>
+      <img src="img/autorretrato-1887.jpg" alt="Autorretrato com Chapéu de Feltro, 1887" loading="lazy">
+      <figcaption>Van Gogh, Autorretrato com Chapéu de Feltro (1887, Amsterdã). Óleo sobre tela.</figcaption>
+    </figure></aside>
+  </div>
+</div></div></section>
+
+<section class="slide" id="biografia-2" data-slide><div class="slide-in"><div class="wrap">
+  <div class="sec-head">
+    <span class="tag">Biografia | Parte II: 1886–1890</span>
+    <h2 style="margin-top:12px">Paris, a Luminosidade de Arles, Crises e Legado Póstumo</h2>
+  </div>
+  <div class="bio">
+    <div class="stack">
+      <div class="card y"><h3>1. O Contato com a Vanguarda em Paris (1886–1888)</h3><ul>
+        <li><b>Mudança para a França:</b> Instalou-se com o irmão Theo em Montmartre, conhecendo Pissarro, Toulouse-Lautrec, Bernard e Gauguin.</li>
+        <li><b>Clareamento da Paleta:</b> Abandonou os tons terrosos holandeses em favor de cores vivas e luminosas da técnica impressionista.</li>
+        <li><b>A Paixão pelo Japonismo:</b> Adquiriu centenas de gravuras japonesas ('ukiyo-e'), cujas linhas de contorno influenciaram decisivamente seu traço.</li>
+      </ul></div>
+      <div class="card"><h3>2. A Casa Amarela e o Sanatório de Saint-Rémy (1888–1889)</h3><ul>
+        <li><b>O Ateliê do Sul:</b> Mudou-se para Arles visando criar uma comunidade artística; conviveu dois meses conturbados com Paul Gauguin.</li>
+        <li><b>A Crise da Orelha:</b> Após violenta discussão com Gauguin em dezembro de 1888, feriu a própria orelha esquerda, marcando grave colapso emocional.</li>
+        <li><b>Internação Voluntária:</b> Ingressou em Saint-Paul-de-Mausole em Saint-Rémy (1889), onde pintou obras-primas como 'A Noite Estrelada'.</li>
+      </ul></div>
+      <div class="card y"><h3>3. Auvers-sur-Oise, Desfecho e Consagração Póstuma (1890)</h3><ul>
+        <li><b>Últimos Meses:</b> Em maio de 1890 mudou-se para Auvers-sur-Oise sob supervisão médica do Dr. Paul Gachet, amigo dos pintores.</li>
+        <li><b>Produção Vertiginosa:</b> Pintou mais de 70 telas em apenas 70 dias, incluindo trigais extensos, retratos e a igreja local de Auvers.</li>
+        <li><b>Falecimento Trágico:</b> Em 27 de julho foi atingido por disparo de arma de fogo no peito, falecendo dois dias depois nos braços de Theo.</li>
+        <li><b>A Morte de Theo:</b> Theo van Gogh morreu seis meses após Vincent, deixando o acervo aos cuidados de sua esposa Jo van Gogh-Bonger.</li>
+        <li><b>Consagração Histórica:</b> Jo organizou as correspondências e exposições póstumas, transformando Van Gogh em ícone supremo da arte universal.</li>
+      </ul></div>
+    </div>
+    <aside><figure>
+      <img src="img/casa-amarela-1888.jpg" alt="A Casa Amarela em Arles, 1888" loading="lazy">
+      <figcaption>Van Gogh, A Casa Amarela em Arles (1888, Van Gogh Museum). Óleo sobre tela.</figcaption>
+    </figure></aside>
+  </div>
+</div></div></section>
+
+<!-- CONTEXTO -->
+<section class="slide" id="contexto" data-slide><div class="slide-in"><div class="wrap">
+  <div class="sec-head">
+    <span class="tag">Contexto Histórico | Parte I: 1850–1880</span>
+    <h2 style="margin-top:12px">Revolução Industrial, Mudança Social e o Advento da Fotografia</h2>
+  </div>
+  <div class="cols c3">
+    <div class="card"><h3>1. Segunda Revolução Industrial</h3><ul>
+      <li><b>Expansão Fabril e Urbana:</b> Consolidação acelerada da siderurgia, malhas ferroviárias e mineração de carvão na Europa Ocidental (Bélgica, França e Alemanha).</li>
+      <li><b>Contrastes de Classe:</b> Aumento dramático do abismo entre a opulência da burguesia financeira e a extrema precariedade material das massas operárias e rurais.</li>
+      <li><b>Tensões Sociais e Ideológicas:</b> Período de efervescência teórica com o surgimento do sindicalismo organizado, do socialismo científico e de movimentos de greve operária.</li>
+      <li><b>Impacto na Sensibilidade de Vincent:</b> A convivência direta com os mineiros em Borinage definiu sua recusa ao esteticismo fútil e seu apreço pela autenticidade do povo humilde.</li>
+      <li><b>O Olhar Crítico sobre a Máquina:</b> Embora fascinado pelo progresso do transporte, Van Gogh temia a desumanização mecânica provocada pelo ritmo das novas fábricas.</li>
+    </ul></div>
+    <div class="card y"><h3>2. A Invenção da Fotografia</h3><ul>
+      <li><b>Ameaça ao Mimetismo:</b> A difusão técnica do daguerreótipo e de retratos fotográficos tirou da pintura a exclusividade do registro documental exato da realidade.</li>
+      <li><b>Libertação da Linguagem Pictórica:</b> Sem a obrigação de copiar mecanicamente o mundo externo, os artistas conquistaram liberdade para explorar dimensões subjetivas e estruturais.</li>
+      <li><b>A Cor como Emoção Pura:</b> A impossibilidade inicial de reproduzir cores nas fotos estimulou a pesquisa plástica em torno das harmonias cromáticas e dos contrastes simultâneos.</li>
+      <li><b>Conceito Estético Van-Goghiano:</b> Van Gogh afirmava categoricamente: 'Em vez de tentar reproduzir o que tenho diante dos olhos, uso a cor para me expressar com mais força'.</li>
+      <li><b>Transfiguração da Matéria:</b> A textura espessa e tátil da tinta a óleo tornou-se a resposta artística incontestável à superfície plana e desprovida de relevo do papel fotográfico.</li>
+    </ul></div>
+    <div class="card"><h3>3. A Ruptura Impressionista (1874)</h3><ul>
+      <li><b>Ruptura com os Salões Oficiais:</b> Em 1874, Monet, Renoir, Degas e Pissarro desafiaram as normas da Academia francesa ao organizar a 1ª Exposição do grupo independente.</li>
+      <li><b>A Pintura ao Ar Livre ('Plein Air'):</b> Abandono da iluminação cenográfica do ateliê fechado em busca da observação direta dos efeitos efêmeros da luz solar natural.</li>
+      <li><b>Pincelada Fragmentada e Ótica:</b> Substituição do acabamento acadêmico polido por toques rápidos e cores justapostas que se fundem na retina do próprio observador.</li>
+      <li><b>Recepção Inicial Hostil:</b> Ridicularizados pela crítica conservadora como 'inacabados', os impressionistas transformaram irreversivelmente a história visual do Ocidente.</li>
+      <li><b>Herança Absorvida por Van Gogh:</b> Essa rebelião estética abriu caminho para que Van Gogh, anos mais tarde em Paris, clareasse radicalmente sua paleta e seus horizontes.</li>
+    </ul></div>
+  </div>
+</div></div></section>
+
+<section class="slide" id="contexto-2" data-slide><div class="slide-in"><div class="wrap">
+  <div class="sec-head">
+    <span class="tag">Contexto Histórico | Parte II: 1880–1890</span>
+    <h2 style="margin-top:12px">Superação da Luz Ótica, Simbolismo e Raízes Modernas</h2>
+  </div>
+  <div class="cols c3">
+    <div class="card y"><h3>1. A Afirmação Pós-Impressionista</h3><ul>
+      <li><b>Insatisfação com o Efêmero:</b> Artistas como Van Gogh, Cézanne, Gauguin e Seurat consideraram o Impressionismo excessivamente fugaz e dependente da impressão ótica exterior.</li>
+      <li><b>Resgate da Forma e da Ideia:</b> Cézanne buscou a geometria estrutural da natureza; Seurat formalizou o pontilhismo; Gauguin investigou a simplificação mística e o sintetismo.</li>
+      <li><b>Subjetividade Espiritual e Moral:</b> Para Van Gogh, a tela converteu-se em diário íntimo e desabafo existencial, guiado não pela retina, mas pelas profundezas do espírito.</li>
+      <li><b>Ruptura com o Espaço Clássico:</b> A perspectiva geométrica renascentista foi gradativamente desmantelada em favor de composições guiadas pelo ritmo emocional e simbólico.</li>
+      <li><b>Marco Inicial da Arte Contemporânea:</b> O Pós-Impressionismo fundou o princípio moderno de que a arte tem valor autônomo, não dependendo de retratar fielmente a natureza visível.</li>
+    </ul></div>
+    <div class="card"><h3>2. A Onda do 'Japonismo'</h3><ul>
+      <li><b>Abertura Comercial Meiji:</b> A reabertura dos portos japoneses no século XIX inundou as capitais europeias com xilogravuras em madeira ('ukiyo-e') de mestres orientais.</li>
+      <li><b>Novos Paradigmas Visuais:</b> As estampas japonesas fascinaram pela ausência de sombras esfumadas, cores puras aplicadas em planos chapados e linhas de contorno expressivas.</li>
+      <li><b>Composições Arrojadas:</b> Uso de pontos de vista elevados, enquadramentos diagonais e assimetrias que romperam a centralidade composicional da tradição europeia.</li>
+      <li><b>Apropriação Criativa de Vincent:</b> Van Gogh comprou centenas de gravuras em Paris, pendurou-as nas paredes de seu ateliê e chegou a reproduzir a óleo obras célebres de Hiroshige.</li>
+      <li><b>Síntese nos Períodos de Arles e Saint-Rémy:</b> O aprendizado com a gravura oriental permitiu a Vincent estilizar contornos e sintetizar campos cromáticos luminosos com máxima clareza.</li>
+    </ul></div>
+    <div class="card y"><h3>3. Gênese das Vanguardas do Século XX</h3><ul>
+      <li><b>O Gesto como Matéria Viva:</b> Ao aplicar a tinta a óleo em relevo visível e empastado, Van Gogh fez do próprio ato físico de pintar uma manifestação emocional imediata.</li>
+      <li><b>Fundamento do Expressionismo:</b> Sua obra exerceu influência direta e fundacional sobre o Expressionismo alemão ('Die Brücke' e 'Der Blaue Reiter') e sobre o norueguês Edvard Munch.</li>
+      <li><b>A Força Cromática do Fauvismo:</b> O emprego de cores puras, contrastantes e arbitrárias inspirou diretamente Henri Matisse e André Derain na criação do Fauvismo em 1905.</li>
+      <li><b>A Pintura como Testemunho Humano:</b> Provou que o sofrimento, o arrebatamento e a fraternidade humana poderiam ser traduzidos em ritmos visuais de extraordinária potência.</li>
+      <li><b>Imortalidade na História da Arte:</b> Sua trajetória transformou o conceito de artista moderno: alguém que transcende seu tempo histórico para tocar a sensibilidade de toda a humanidade.</li>
+    </ul></div>
+  </div>
+</div></div></section>
+
+<!-- CRONOLOGIA -->
+<section class="slide" id="cronologia" data-slide><div class="slide-in"><div class="wrap">
+  <div class="sec-head">
+    <span class="tag">Linha Cronológica | 1853–1890</span>
+    <h2 style="margin-top:12px">Paralelo entre o Contexto Europeu e a Trajetória de Van Gogh</h2>
+  </div>
+  <div class="leg">
+    <span><i style="background:var(--blue)"></i>História</span>
+    <span><i style="background:var(--yellow);border:1px solid var(--gold)"></i>Van Gogh</span>
+  </div>
+  <div class="tl">
+    <div class="row" data-y="1853 – 1869">
+      <div class="card"><h3>História: 1853 – 1869</h3><div class="t">Segunda Revolução Industrial</div><ul>
+        <li>Expansão ferroviária e industrial na Europa.</li><li>Reformas urbanas de Haussmann em Paris.</li><li>Difusão do daguerreótipo e da fotografia.</li></ul></div>
+      <div class="card y"><h3>Van Gogh: 1853 – 1869</h3><div class="t">Infância e Formação</div><ul>
+        <li>Nascimento em Groot-Zundert (1853).</li><li>Infância em família calvinista severa.</li><li>Ingresso na galeria Goupil em Haia (1869).</li></ul></div>
+    </div>
+    <div class="row" data-y="1870 – 1879">
+      <div class="card"><h3>História: 1870 – 1879</h3><div class="t">Guerra e Impressionismo</div><ul>
+        <li>Guerra Franco-Prussiana (1870).</li><li>1ª Exposição Impressionista em Paris (1874).</li><li>Crescimento do proletariado e lutas sociais.</li></ul></div>
+      <div class="card y"><h3>Van Gogh: 1870 – 1879</h3><div class="t">Crise e Vocação Religiosa</div><ul>
+        <li>Atuação comercial em Londres e Paris.</li><li>Crise de fé e abandono da Goupil.</li><li>Missão entre mineiros em Borinage (1879).</li></ul></div>
+    </div>
+    <div class="row" data-y="1880 – 1885">
+      <div class="card"><h3>História: 1880 – 1885</h3><div class="t">Naturalismo e Japonismo</div><ul>
+        <li>Literatura social de Émile Zola.</li><li>Circulação do Japonismo nos salões de arte.</li><li>Fortalecimento dos movimentos operários.</li></ul></div>
+      <div class="card y"><h3>Van Gogh: 1880 – 1885</h3><div class="t">Decisão Artística e Nuenen</div><ul>
+        <li>Decide pintar com apoio de Theo (1880).</li><li>Estudos de desenho em Bruxelas e Haia.</li><li>Fase terrosa: 'Os Comedores de Batata' (1885).</li></ul></div>
+    </div>
+    <div class="row" data-y="1886 – 1888">
+      <div class="card"><h3>História: 1886 – 1888</h3><div class="t">Pós-Impressionismo em Paris</div><ul>
+        <li>8ª e última mostra impressionista (1886).</li><li>Inauguração do Salão dos Independentes.</li><li>Construção da Torre Eiffel iniciada.</li></ul></div>
+      <div class="card y"><h3>Van Gogh: 1886 – 1888</h3><div class="t">A Luz de Paris e Arles</div><ul>
+        <li>Chegada a Paris (1886) e cores vivas.</li><li>Convívio com Pissarro e Gauguin.</li><li>Aluga a 'Casa Amarela' em Arles (1888).</li></ul></div>
+    </div>
+    <div class="row" data-y="1889 – 1890">
+      <div class="card"><h3>História: 1889 – 1890</h3><div class="t">Belle Époque e Modernidade</div><ul>
+        <li>Centenário da Revolução Francesa (1889).</li><li>Exposição Universal de Paris (1889).</li><li>Emergência do Simbolismo e vanguardas.</li></ul></div>
+      <div class="card y"><h3>Van Gogh: 1889 – 1890</h3><div class="t">Saint-Rémy, Auvers e Morte</div><ul>
+        <li>Internação voluntária no asilo (1889).</li><li>Criação de 'A Noite Estrelada' (1889).</li><li>Fase em Auvers e morte em julho de 1890.</li></ul></div>
+    </div>
+  </div>
+</div></div></section>
+
+<!-- EXPOSIÇÃO: AS TRÊS FASES -->
+<section class="slide" id="fases" data-slide><div class="slide-in"><div class="wrap"><div class="sec-head">
+    <span class="tag">Exposição | 1880–1890</span>
+    <h2 style="margin-top:12px">As Três Fases Artísticas de Vincent van Gogh</h2>
+    <p class="fx-lead">Da penumbra camponesa da Holanda à luz de Paris e às cores incandescentes do Sul da França: dezoito pinturas mostram como a cor, a técnica, a composição e a emoção se transformaram em dez anos de trabalho.</p>
+  </div></div>
+  <div class="fx-wide" id="fases-root"><noscript><p>Ative o JavaScript para visitar a exposição interativa.</p></noscript></div></div></section>
+
+<!-- EXPOSIÇÃO: AUTORRETRATOS -->
+<section class="slide" id="autorretratos" data-slide><div class="slide-in"><div class="wrap"><div class="sec-head">
+    <span class="tag">Galeria | Autorretratos</span>
+    <h2 style="margin-top:12px">Van Gogh por Van Gogh</h2>
+    <p class="fx-lead">Do esqueleto irônico de Antuérpia ao rosto sereno de Saint-Rémy, passando pelas cadeiras de Arles e pela orelha enfaixada: os retratos em que o artista registrou a si mesmo e a própria vida.</p>
+  </div></div>
+  <div class="fx-wide" id="autorretratos-root"><noscript><p>Ative o JavaScript para visitar a galeria interativa.</p></noscript></div></div></section>
+
+<!-- OBRA 1 -->
+<section class="slide" id="comedores" data-slide><div class="slide-in"><div class="wrap">
+  <div class="sec-head">
+    <span class="tag">1ª Obra Analisada | Período Holandês (Nuenen, 1885)</span>
+    <h2 style="margin-top:12px">“Os Comedores de Batata” (De Aardappeleters) — Vincent van Gogh</h2>
+  </div>
+  <div class="work">
+    <figure>
+      <img src="img/comedores-de-batata-1885.jpg" alt="Os Comedores de Batata, 1885" loading="lazy">
+      <figcaption>“Os Comedores de Batata” (1885, Museu Van Gogh, Amsterdã). Óleo sobre tela.</figcaption>
+    </figure>
+    <div class="facts">
+      <div class="card y"><h3>3. Ficha Técnica e Ano de Criação</h3><ul>
+        <li><b>Título Original:</b> De Aardappeleters (The Potato Eaters).</li>
+        <li><b>Período de Execução:</b> Abril a Maio de 1885 (Fase de Nuenen, Países Baixos).</li>
+        <li><b>Técnica e Suporte:</b> Óleo sobre tela, com dimensões de 82 cm × 114 cm.</li>
+        <li><b>Localização Atual:</b> Museu Van Gogh, Amsterdã (Coleção Permanente Nacional).</li>
+      </ul></div>
+      <div class="card"><h3>5. Perspectiva, Foco e Contexto</h3><ul>
+        <li><b>Claro-Escuro Rembrandtesco:</b> Iluminação focada descendente, herdada da tradição barroca holandesa de Rembrandt e Frans Hals.</li>
+        <li><b>Ponto de Vista Imersivo:</b> O observador é posicionado intimamente dentro do casebre enfumaçado, participando da ceia familiar.</li>
+        <li><b>Marco de Autoria:</b> Primeira obra que Van Gogh considerou madura para atestar seu valor no cenário artístico internacional.</li>
+      </ul></div>
+    </div>
+  </div>
+</div></div></section>
+
+<section class="slide" id="comedores-2" data-slide><div class="slide-in"><div class="wrap">
+  <div class="sec-head">
+    <span class="tag">1ª Obra Analisada | Período Holandês (Nuenen, 1885)</span>
+    <h2 style="margin-top:12px">“Os Comedores de Batata” (De Aardappeleters) — Vincent van Gogh</h2>
+  </div>
+  <div class="cols c3">
+    <div class="card"><h3>1. Linguagem e Técnica Pictórica</h3><ul>
+      <li><b>Estilo Realista-Expressivo:</b> Linguagem rústica de teor naturalista e dramático, sem concessões ao decorativismo burguês.</li>
+      <li><b>Cromatismo Terroso:</b> Paleta austera dominada por marrons profundos, ocres e verdes-escuros sujos que remetem à cor da terra recém-cavada.</li>
+      <li><b>Pincelada Espessa:</b> Aplicação vigorosa e rugosa de tinta, valorizando a aspereza tátil dos rostos e vestimentas camponesas.</li>
+    </ul></div>
+    <div class="card y"><h3>2. Significados, Temática e Simbolismo</h3><ul>
+      <li><b>Dignidade da Labuta:</b> O quadro celebra a honestidade moral dos trabalhadores que sobrevivem do próprio esforço braçal diário.</li>
+      <li><b>Mãos que Lavram e Comem:</b> Simbolismo fundamental: as mesmas mãos calejadas que partilham a batata no prato cavaram o solo para colhê-la.</li>
+      <li><b>A Lamparina a Óleo:</b> Fonte luminosa central que simboliza o refúgio do lar, a partilha comunitária e o calor humano em meio à miséria.</li>
+    </ul></div>
+    <div class="card"><h3>4. Personagens e Figuras na Obra</h3><ul>
+      <li><b>A Família De Groot:</b> Cinco camponeses sentados em volta de uma mesa tosca compartilhando uma travessa de batatas e chicória/café quente.</li>
+      <li><b>Feições Desgastadas:</b> Rostos angulosos com ossos salientes, olhares fatigados e testas franzidas marcadas pela severidade do clima e da pobreza.</li>
+      <li><b>Ruptura com o Ideal Clássico:</b> Ausência consciente de embelezamento, o que chocou a crítica da época mas conferiu genuinidade histórica à obra.</li>
+    </ul></div>
+  </div>
+</div></div></section>
+
+<!-- OBRA 2 -->
+<section class="slide" id="noite" data-slide><div class="slide-in"><div class="wrap">
+  <div class="sec-head">
+    <span class="tag">2ª Obra Analisada | Período de Saint-Rémy (1889)</span>
+    <h2 style="margin-top:12px">“A Noite Estrelada” (De sterrennacht) — Vincent van Gogh</h2>
+  </div>
+  <div class="work">
+    <figure>
+      <img src="img/noite-estrelada-1889.jpg" alt="A Noite Estrelada, 1889" loading="lazy">
+      <figcaption>“A Noite Estrelada” (1889, MoMA, Nova York). Óleo sobre tela.</figcaption>
+    </figure>
+    <div class="facts">
+      <div class="card y"><h3>3. Ficha Técnica e Ano de Criação</h3><ul>
+        <li><b>Título Original:</b> De sterrennacht (The Starry Night).</li>
+        <li><b>Data de Criação:</b> Junho de 1889 (Sanatório de Saint-Paul-de-Mausole, Saint-Rémy-de-Provence).</li>
+        <li><b>Técnica e Suporte:</b> Óleo sobre tela, medindo 73,7 cm × 92,1 cm.</li>
+        <li><b>Localização Atual:</b> The Museum of Modern Art (MoMA), Nova York (adquirida em 1941, Lillie P. Bliss Bequest).</li>
+      </ul></div>
+      <div class="card"><h3>5. Perspectiva, Foco e Contexto</h3><ul>
+        <li><b>Visão da Janela do Asilo:</b> Concebida a partir da janela de seu quarto no sanatório, mas transfigurada inteiramente pela memória e imaginação.</li>
+        <li><b>Realismo Astronômico:</b> A estrela matutina mais brilhante corresponde à observação real do planeta Vênus naquele mês de junho de 1889.</li>
+        <li><b>Consagração da Arte Moderna:</b> Marco em que a visão subjetiva do criador se sobrepõe definitivamente à mera reprodução do mundo visível.</li>
+      </ul></div>
+    </div>
+  </div>
+</div></div></section>
+
+<section class="slide" id="noite-2" data-slide><div class="slide-in"><div class="wrap">
+  <div class="sec-head">
+    <span class="tag">2ª Obra Analisada | Período de Saint-Rémy (1889)</span>
+    <h2 style="margin-top:12px">“A Noite Estrelada” (De sterrennacht) — Vincent van Gogh</h2>
+  </div>
+  <div class="cols c3">
+    <div class="card"><h3>1. Linguagem e Técnica Pictórica</h3><ul>
+      <li><b>Pós-Impressionismo Dinâmico:</b> Linguagem revolucionária que antecede o Expressionismo, onde a emoção guia a forma e o movimento.</li>
+      <li><b>Técnica de Empastamento:</b> Pinceladas vigorosas, onduladas e espessas aplicadas diretamente na tela, conferindo textura e vibração rítmica.</li>
+      <li><b>Cromatismo Complementar:</b> Contraste dramático entre o azul-cobalto e o ultramarino do céu noturno com o amarelo-ouro e o branco das estrelas.</li>
+    </ul></div>
+    <div class="card y"><h3>2. Significados, Temática e Simbolismo</h3><ul>
+      <li><b>Êxtase Cósmico e Espiritual:</b> Visão contemplativa e transcendental do universo, unindo anseios espirituais de redenção ao infinito da noite.</li>
+      <li><b>O Cipreste Monumental:</b> Árvore associada tradicionalmente ao luto e à vida eterna, funcionando como elo vertical unindo a Terra ao Céu.</li>
+      <li><b>A Noite Viva:</b> A noite não é tratada como escuridão morta, mas como um espetáculo grandioso, vibrante de energia vital e esperança.</li>
+    </ul></div>
+    <div class="card"><h3>4. Elementos e Figuras na Composição</h3><ul>
+      <li><b>Céu Espiralado e Astros:</b> Onze estrelas incandescentes circundadas por halos luminosos e uma lua crescente em turbilhão cósmico.</li>
+      <li><b>O Cipreste em 1º Plano:</b> Silhueta vegetal escura e chamejante que ocupa todo o flanco esquerdo, ancorando a perspectiva.</li>
+      <li><b>A Aldeia Imaginada:</b> Vila pacífica aos pés das colinas dos Alpilles, destacando-se a torre pontiaguda de igreja com traços holandeses.</li>
+    </ul></div>
+  </div>
+</div></div></section>
+
+<!-- REFERÊNCIAS -->
+<section class="slide" id="referencias" data-slide><div class="slide-in"><div class="wrap">
+  <div class="thanks">
+    <span class="tag">Encerramento | Referências Culturais</span>
+    <h2 style="margin-top:18px">OBRIGADO!!</h2>
+    <p><b>Aluno: Patrício | Turma: 3B | Língua Portuguesa, Literatura e Artes</b></p>
+    <hr>
+  </div>
+</div></div></section>
+
+</main>
+<footer><div class="wrap">Trabalho escolar de Patrício · Turma 3B · Língua Portuguesa, Literatura e Artes</div></footer>
+<script src="exposicao.js" defer></script>
+<script src="apresentacao.js" defer></script>
+</body>
+</html>

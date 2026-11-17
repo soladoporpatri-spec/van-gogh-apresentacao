@@ -1,0 +1,217 @@
+/* =========================================================
+   Modo apresentação — todo o site em slides de tela cheia.
+   Tudo escopado em html.pz-on (sem JS o site continua uma página normal).
+   ========================================================= */
+html.pz-on{font-size:clamp(13px,2.05vh,25px);scroll-behavior:auto;height:100%;overflow:hidden}
+html.pz-on body{height:100%;overflow:hidden;overscroll-behavior:none;font-size:1rem;line-height:1.5}
+html.pz-on footer{display:none}
+html.pz-on #pz-main{display:block}
+
+/* ---------- slide ---------- */
+html.pz-on .slide{
+  position:fixed;inset:0;display:none;flex-direction:column;
+  padding:clamp(12px,2.6vh,36px) clamp(18px,4.5vw,76px) clamp(82px,11.5vh,110px);
+  overflow-x:hidden;overflow-y:auto;scrollbar-width:thin;outline:none;
+  background:var(--bg);
+}
+html.pz-on .slide.is-active,
+html.pz-on .slide.is-leaving{display:flex}
+html.pz-on .slide.is-active{z-index:2;animation:pz-in .62s cubic-bezier(.22,.7,.18,1) both}
+html.pz-on .slide.is-leaving{z-index:1;pointer-events:none;animation:pz-out .42s ease both}
+@keyframes pz-in{from{opacity:0;transform:translateX(var(--pz-x,4%))}to{opacity:1;transform:none}}
+@keyframes pz-out{from{opacity:1;transform:none}to{opacity:0;transform:translateX(calc(var(--pz-x,4%) * -.7))}}
+html.pz-on .slide-in{margin:auto;width:100%;max-width:1500px}
+html.pz-on .slide .wrap{max-width:none;padding:0}
+html.pz-on .slide section{padding:0}
+
+html.pz-on .sec-head{margin-bottom:clamp(12px,2.4vh,26px)}
+html.pz-on .sec-head h2{font-size:clamp(1.5rem,3.1vw,2.35rem)}
+html.pz-on .sec-head h2[style]{margin-top:.5em !important}
+html.pz-on .card h3{font-size:1.02rem;padding:.6em .9em}
+html.pz-on .card ul{padding:.8em .95em .9em}
+html.pz-on .card li{font-size:.9rem;padding-bottom:.45em}
+html.pz-on .card li::before{top:.58em}
+
+/* ---------- capa ---------- */
+html.pz-on .hero{padding:clamp(12px,2.6vh,36px) clamp(18px,4.5vw,76px) clamp(82px,11.5vh,110px)}
+html.pz-on .hero .grid{gap:clamp(24px,4vw,64px)}
+html.pz-on .hero h1{font-size:clamp(2.6rem,6.2vw,5rem)}
+html.pz-on .hero p.sub{font-size:1.2rem}
+html.pz-on .hero figure{justify-self:center}
+html.pz-on .hero figure img{width:auto;max-width:100%;max-height:64vh;margin:0 auto}
+
+/* ---------- biografia (3 colunas) e contexto ---------- */
+@media (min-width:1000px){
+  html.pz-on .bio{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,.62fr);grid-template-rows:auto 1fr;grid-auto-flow:row;gap:clamp(12px,1.6vw,22px);align-items:start}
+  html.pz-on .bio .stack{display:contents}
+  html.pz-on .bio .stack .card:nth-child(1){grid-column:1;grid-row:1}
+  html.pz-on .bio .stack .card:nth-child(2){grid-column:1;grid-row:2}
+  html.pz-on .bio .stack .card:nth-child(3){grid-column:2;grid-row:1 / span 2}
+  html.pz-on .bio aside{grid-column:3;grid-row:1 / span 2}
+  html.pz-on .bio aside figure{position:static}
+  html.pz-on .bio aside figure img{max-height:58vh;width:auto;max-width:100%;margin:0 auto}
+}
+html.pz-on .cols.c3{gap:clamp(12px,1.6vw,22px)}
+
+/* ---------- linha cronológica (5 colunas x 2 linhas) ---------- */
+@media (min-width:1100px){
+  html.pz-on .leg{margin-bottom:10px}
+  html.pz-on .tl{grid-template-columns:repeat(5,minmax(0,1fr));grid-template-rows:auto auto;gap:14px;margin-top:0}
+  html.pz-on .tl::before,html.pz-on .row::after{display:none}
+  html.pz-on .row{display:contents}
+  html.pz-on .row > .card{grid-row:var(--r)}
+  html.pz-on .row > .card:first-child{--r:1}
+  html.pz-on .row > .card:last-child{--r:2}
+  html.pz-on .row:nth-child(1) > .card{grid-column:1}
+  html.pz-on .row:nth-child(2) > .card{grid-column:2}
+  html.pz-on .row:nth-child(3) > .card{grid-column:3}
+  html.pz-on .row:nth-child(4) > .card{grid-column:4}
+  html.pz-on .row:nth-child(5) > .card{grid-column:5}
+  html.pz-on .row .card h3{font-size:.92rem}
+  html.pz-on .row .card .t{padding:.6em .9em 0;font-size:.98rem}
+  html.pz-on .row .card li{font-size:.88rem}
+}
+
+/* ---------- obras analisadas ---------- */
+html.pz-on .work{margin-bottom:0;gap:clamp(16px,2.4vw,34px);align-items:center}
+html.pz-on .work figure img{max-height:58vh;width:auto;max-width:100%;margin:0 auto}
+html.pz-on .work figure{display:grid}
+
+/* ---------- encerramento ---------- */
+html.pz-on .thanks{padding:clamp(24px,6vh,64px) 20px}
+html.pz-on .ref img{width:clamp(80px,10vw,140px)}
+
+/* ---------- exposições interativas dentro do slide ---------- */
+html.pz-on .slide .sec-head{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px;margin-bottom:0}
+html.pz-on .slide .sec-head .tag{flex:none}
+html.pz-on .slide .sec-head h2{margin:0 !important}
+html.pz-on .fx-lead{display:none}
+html.pz-on .fx{--mh:min(44vh,540px);--strip:clamp(18px,3vh,28px)}
+html.pz-on .fx-bar{margin:6px 0 clamp(8px,1.6vh,16px)}
+html.pz-on .fx-hint{display:none}
+html.pz-on .fx-stage{--hk:.24;row-gap:16px}
+html.pz-on .fx[data-single] .fx-stage{--hk:.14}
+html.pz-on .fx-head{gap:4px;margin-bottom:clamp(8px,1.6vh,16px)}
+html.pz-on .fx-desc{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:.9rem}
+html.pz-on .fx-dots{display:none}
+html.pz-on .fx[data-mode="overview"] .fx-tagline{display:none}
+html.pz-on .fx[data-single][data-mode="overview"] .fx-bar{display:none}
+html.pz-on .fx[data-single]{--mh:min(41vh,520px)}
+html.pz-on .fx[data-mode="phase"] .fx-head{margin-bottom:8px}
+html.pz-on .fx-info{max-height:calc(100vh - clamp(190px,30vh,260px));overflow-y:auto;scrollbar-width:thin;padding:clamp(16px,2vw,32px)}
+html.pz-on .fx-info .fx-title{font-size:clamp(1.5rem,2.6vw,2.2rem)}
+html.pz-on .fx-block p{font-size:.96rem}
+
+/* ---------- controles ---------- */
+.pz-ui{display:none}
+html.pz-on .pz-ui{display:block}
+.pz-count{position:fixed;left:50%;bottom:clamp(14px,2.4vh,26px);transform:translateX(-50%);z-index:50;font:600 .9rem var(--sans);color:var(--muted);letter-spacing:.08em;font-variant-numeric:tabular-nums;pointer-events:none}
+.pz-fs,.pz-back,.pz-next{position:fixed;z-index:50;font:600 .95rem var(--sans);letter-spacing:.01em;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:3px;padding:.6em 1.3em;cursor:pointer;transition:background-color .25s,border-color .25s,opacity .35s,transform .2s}
+.pz-fs:hover,.pz-back:hover{background:var(--blue);border-color:var(--blue-d)}
+.pz-fs:active,.pz-back:active,.pz-next:active{transform:scale(.97)}
+.pz-fs{right:clamp(12px,1.6vw,22px);top:clamp(12px,2.2vh,22px);font-size:.82rem;padding:.45em 1em;background:color-mix(in srgb,var(--card) 85%,transparent)}
+.pz-back{left:clamp(14px,2vw,30px);bottom:clamp(14px,2.6vh,28px)}
+.pz-next{right:clamp(14px,2vw,30px);bottom:clamp(14px,2.6vh,28px);background:var(--gold);border-color:var(--gold);color:#1c1c1c}
+.pz-next:hover{filter:brightness(1.07)}
+.pz-back[disabled],.pz-next[disabled]{opacity:0;pointer-events:none}
+.pz-fs:focus-visible,.pz-back:focus-visible,.pz-next:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+/* controles esmaecem quando o mouse fica parado */
+.pz-ui.is-idle .pz-fs,.pz-ui.is-idle .pz-count{opacity:.35}
+.pz-ui.is-idle .pz-back,.pz-ui.is-idle .pz-next{opacity:.75}
+.pz-ui .pz-back[disabled],.pz-ui .pz-next[disabled]{opacity:0}
+
+/* ---------- telas pequenas ---------- */
+@media (max-width:860px){
+  html.pz-on{font-size:clamp(14px,3.6vw,17px)}
+  html.pz-on .slide{padding:max(54px,6vh) 16px 104px}
+  html.pz-on .work figure img,html.pz-on .hero figure img,html.pz-on .bio aside figure img{max-height:42vh}
+  html.pz-on .fx{--mh:min(52vh,480px)}
+  html.pz-on .fx-info{max-height:none;overflow:visible}
+  html.pz-on .slide .sec-head{display:block}
+  .pz-count{bottom:22px}
+  .pz-fs{top:10px;right:10px}
+  .pz-back,.pz-next{padding:.55em 1.1em}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html.pz-on .slide.is-active,html.pz-on .slide.is-leaving{animation:none !important}
+  .pz-bar i,.pz-fs,.pz-back,.pz-next{transition:none !important}
+}
+
+
+/* =========================================================
+   Carregamento de abertura
+   ========================================================= */
+.pz-loader{display:none}
+html.pz-on .pz-loader{
+  display:grid;position:fixed;inset:0;z-index:100;place-items:center;color:#f3e7c4;overflow:hidden;
+  animation:pz-failsafe .6s ease 9s forwards;   /* se o JS falhar, a tela some sozinha */
+}
+@keyframes pz-failsafe{to{opacity:0;visibility:hidden}}
+.pz-curtain{position:absolute;left:0;right:0;height:50.4%;transition:transform 1.05s cubic-bezier(.76,0,.24,1);
+  background:#0f1823}
+.pz-curtain.top{top:0}
+.pz-curtain.bottom{bottom:0}
+.pz-loader.is-done .pz-curtain.top{transform:translateY(-101%)}
+.pz-loader.is-done .pz-curtain.bottom{transform:translateY(101%)}
+.pz-loader-in{position:relative;z-index:1;text-align:center;padding:0 24px;transition:opacity .45s ease,transform .7s var(--ease,ease)}
+.pz-loader.is-done .pz-loader-in{opacity:0;transform:scale(1.05)}
+.pz-l-kicker{display:none;margin:0 0 20px;font:600 .74rem var(--sans);letter-spacing:.32em;text-transform:uppercase;color:#e8b94a;animation:pz-rise .9s var(--ease,ease) .15s backwards}
+.pz-l-title{animation:pz-fade .8s ease .15s backwards;font:400 clamp(2.3rem,7.2vw,4.8rem)/1.1 var(--serif);margin:0 0 38px;letter-spacing:.01em}
+.pz-l-title .c{display:inline}
+.pz-l-bar{width:min(320px,62vw);height:2px;margin:0 auto;border-radius:2px;background:rgba(243,231,196,.16);overflow:hidden;animation:pz-fade .6s ease .6s backwards}
+.pz-l-bar i{display:block;height:100%;transform:scaleX(0);transform-origin:left;background:#e8b94a}
+.pz-l-pct{display:none;margin:14px 0 0;font:600 .78rem var(--sans);letter-spacing:.22em;color:rgba(243,231,196,.6);font-variant-numeric:tabular-nums;animation:pz-fade .6s ease .7s backwards}
+
+/* =========================================================
+   Animações de surgimento (começam quando o carregamento termina
+   e reiniciam toda vez que um slide é exibido)
+   ========================================================= */
+html.pz-on{--ease:cubic-bezier(.22,.7,.18,1)}
+@keyframes pz-rise{from{opacity:0;transform:translateY(12px)}}
+@keyframes pz-slide-x{from{opacity:0;transform:translateX(-8px)}}
+@keyframes pz-pop{from{opacity:0;transform:translateY(14px)}}
+@keyframes pz-word{from{opacity:0;transform:translateY(10px)}}
+@keyframes pz-blur{from{opacity:0}}
+@keyframes pz-grow{from{transform:scaleX(0)}}
+@keyframes pz-track{from{opacity:0}}
+
+@keyframes pz-fade{from{opacity:0}}
+
+
+html.pz-ready .slide.is-active .tag{animation:pz-rise .8s var(--ease) .12s backwards}
+html.pz-ready .slide.is-active .eyebrow{animation:pz-rise .8s var(--ease) .2s backwards}
+html.pz-ready .slide.is-active .sec-head h2{animation:pz-rise .85s var(--ease) .24s backwards}
+html.pz-ready .slide.is-active .sub{animation:pz-rise .85s var(--ease) .85s backwards}
+html.pz-ready .slide.is-active .badge{animation:pz-pop .9s var(--ease) 1.05s backwards}
+html.pz-ready .slide.is-active .leg{animation:pz-rise .8s var(--ease) .3s backwards}
+
+html.pz-ready .slide.is-active figure{animation:pz-pop .7s var(--ease) .25s backwards}
+
+html.pz-ready .slide.is-active .card{animation:pz-pop .85s var(--ease) calc(.3s + var(--i,0) * .09s) backwards}
+html.pz-ready .slide.is-active .card li{animation:pz-slide-x .6s var(--ease) calc(.6s + var(--i,0) * .09s + var(--j,0) * .06s) backwards}
+
+/* título da capa, palavra por palavra */
+html.pz-on .w{display:inline-block}
+html.pz-on .w > span{display:inline-block}
+html.pz-ready .slide.is-active .w > span{animation:pz-word .7s var(--ease) calc(.2s + var(--wi,0) * .09s) backwards}
+
+/* encerramento */
+html.pz-ready .slide.is-active .thanks{animation:pz-pop 1s var(--ease) .1s backwards}
+html.pz-ready .slide.is-active .thanks h2{animation:pz-track 1.3s var(--ease) .35s backwards}
+
+/* exposições interativas */
+html.pz-ready .slide.is-active .fx-bar{animation:pz-rise .8s var(--ease) .3s backwards}
+html.pz-ready .slide.is-active .fx-head{animation:pz-rise .9s var(--ease) calc(.35s + var(--p,0) * .14s) backwards}
+html.pz-ready .slide.is-active .fx-art{animation:pz-blur .95s ease-out calc(.55s + var(--p,0) * .14s + var(--i,0) * .07s) backwards}
+
+/* controles */
+html.pz-ready .pz-back,html.pz-ready .pz-next{animation:pz-rise .8s var(--ease) 1s backwards}
+html.pz-ready .pz-fs,html.pz-ready .pz-count{animation:pz-fade .8s ease 1.1s backwards}
+
+
+@media (prefers-reduced-motion:reduce){
+  html.pz-on .slide *,html.pz-on .slide::before,.pz-ui,.pz-ui *,.pz-loader *{animation:none !important}
+  .pz-curtain,.pz-loader-in{transition:none !important}
+}
